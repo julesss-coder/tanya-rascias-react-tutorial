@@ -1,28 +1,12 @@
 import React from 'react'
 import Table from './Table'
+import Form from './Form'
 
 class App extends React.Component { 
   // Create a state object
   state = {
     // The state object contains properties for everthing you want to store in the state
-    characters: [
-      {
-        name: 'Charlie',
-        job: 'Janitor',
-      },
-      {
-        name: 'Mac',
-        job: 'Bouncer',
-      },
-      {
-        name: 'Dee',
-        job: 'Aspring actress',
-      },
-      {
-        name: 'Dennis',
-        job: 'Bartender',
-      },
-    ],
+    characters: [],
   };
 
   removeCharacter = (index) => {
@@ -39,6 +23,10 @@ class App extends React.Component {
       })
     });
   }
+
+  handleSubmit = (character) => {
+    this.setState({characters:[...this.state.characters, character]});
+  }
   // A class component must include render(), and the return can only return one parent element.
   render() {
     const characters = this.state.characters;
@@ -47,6 +35,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Table characterData={characters} removeCharacter={this.removeCharacter}/>
+        <Form handleSubmit={this.handleSubmit} />
       </div>
     )
   }
