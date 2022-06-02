@@ -25,6 +25,15 @@ class App extends React.Component {
   }
 
   handleSubmit = (character) => {
+    // characters is an array, but individual elements are expected
+    // MDN: Spread syntax can be used when all elements from an object or array need to be included in a list of some kind.
+    // MDN: The spread syntax is commonly used when you want to add a new item to a local data store, or display all stored items plus a new addition. A very simple version of this kind of action could look like so:
+    // let numberStore = [0, 1, 2];
+    // let newNumber = 12;
+    // numberStore = [...numberStore, newNumber];
+
+    // how many and what kind of arguments does setSate() expect?
+
     this.setState({characters:[...this.state.characters, character]});
   }
   // A class component must include render(), and the return can only return one parent element.

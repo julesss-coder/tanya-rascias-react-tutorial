@@ -36,6 +36,11 @@ const TableBody = (props) => {
 
 const Table = (props) => {
   // How does the ES6 property shorthand work?
+  
+  console.log('props in Table: ', props);
+  // We take the object props, which contains the property characterData and the method removeCharacter.
+  // We destructure it, so that we can access the two object properties individually.
+  // See URL: https://www.freecodecamp.org/news/destructuring-in-javascript-es6-ee963292623a/
   const {characterData, removeCharacter} = props;
 
   return (
